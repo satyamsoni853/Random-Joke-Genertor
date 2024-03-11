@@ -1,18 +1,18 @@
-const jokecontainer = document.getElementById("joke");
+const joke_container = document.getElementById("joke");
 const btn = document.getElementById("btn");
 const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
-// const url = "https://official-joke-api.appspot.com/random_joke";
+
 
 let getJoke =() =>{
-    jokecontainer.classList.remove("fade");
+    joke_container.classList.remove("fade");
     fetch(url) 
     .then(data => data.json())
     
 
     .then(item => {
         
-        jokecontainer.textContent = `${item.joke}`;
-        jokecontainer.classList.add("fade");
+        joke_container.textContent = `${item.joke}`;
+        joke_container.classList.add("fade");
     });
 }
 
